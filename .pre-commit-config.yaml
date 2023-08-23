@@ -3,6 +3,7 @@ ci:
   skip: [dbt-compile, dbt-unit-test, dbt-unit-test-coverage]
 
 default_install_hook_types: [pre-commit, post-commit]
+default_stages: [pre-commit]
 
 repos:
   - repo: meta
@@ -47,14 +48,12 @@ repos:
         entry: dbt compile
         language: system
         pass_filenames: false
-        stages: [pre-commit]
         always_run: true
       - id: dbt-unit-test
         name: Run dbt unit tests
         entry: dbt test --select tag:unit-test
         language: system
         pass_filenames: false
-        stages: [pre-commit]
         always_run: true
       - id: dbt-unit-test-coverage
         name: Generate dbt coverage report
