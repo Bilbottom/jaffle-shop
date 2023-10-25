@@ -1,12 +1,14 @@
 dbt clean
 dbt deps
+
+dbt debug
 dbt compile
 
-dbt source freshness
 dbt seed
-dbt run --full-refresh
-dbt test --store-failures
-#dbt build --full-refresh
+dbt build --full-refresh
 
 dbt docs generate
 dbt docs serve
+
+dbt test --select tag:unit-test
+dbt-unit-test-coverage --cov-report

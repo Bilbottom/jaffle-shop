@@ -19,7 +19,13 @@ This project has only been tested using Python 3.9 with the dependencies listed 
 
 ## Getting started
 
-Install Python 3.9 and the dependencies listed in the requirements files.
+Install Python 3.9 and the dependencies listed in the requirements files:
+
+```
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+pre-commit install --install-hooks
+```
 
 The `jaffle_shop` directory has the usual dbt objects and can be run in the usual way. The unit tests for the dbt models are in the `tests` subdirectory.
 
@@ -32,7 +38,7 @@ dbt clean
 dbt deps
 dbt compile
 
-dbt-unit-test-coverage --badge-path coverage-dbt.svg
+dbt-unit-test-coverage
 ```
 
 ## Summary of extensions
